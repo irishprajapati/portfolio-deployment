@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/navbar';
 import Header from './components/Header';
 import Experience from './components/Experience';
+import Skills from './components/skill';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Header />
         <Experience />
+        <Skills />
         <Projects />
         <Contact />
       </main>

@@ -25,7 +25,7 @@ const Contact = () => {
         </div>
         <div className="social-links">
           <a
-            href="https://github.com/Erishprajapati"
+            href="https://github.com/irishprajapati"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"

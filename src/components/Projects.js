@@ -6,8 +6,8 @@ const Projects = () => {
     {
       title: "Project Management API",
       desc: "Full-featured project management system with JWT authentication, task assignment, and role-based access. Built with FastAPI (async), Render PostgreSQL, and SQLAlchemy ORM. Optimized queries reduced response time by 60%.",
-      link: "https://api-deployment-6jj9.onrender.com/swagger/",
-      github: "https://github.com/Erishprajapati/API-deployment"
+      link: "https://project-management-system-ln1h.onrender.com/swagger/",
+      github: "https://github.com/irishprajapati/Project-Management-System"
     },
     {
       title: "Library Management API",
@@ -19,7 +19,7 @@ const Projects = () => {
       title: "E-Commerce API",
       desc: "Scalable backend supporting product catalog, cart, orders, and payment simulation. Features async endpoints, database transactions, and admin endpoints. Used Pydantic models for validation and Uvicorn for high throughput.",
       link: "https://ecommerce-5ti5.onrender.com/docs",
-      github: "https://github.com/Erishprajapati/EcommerceAPI"
+      github: "https://github.com/irishprajapati/Ecommerce"
     },
     {
       title: "Hospital Management System",
@@ -31,18 +31,18 @@ const Projects = () => {
       title: "Peak Times",
       desc: "Web application that helps tourists and locals explore crowd density at different places in the district. Built with Django, PostgreSQL, and Jinja Template. Implemented foreign key constraints and data integrity checks for scalability and reliability.",
       link: null,
-      github: "https://github.com/Erishprajapati/Semester-Six/tree/main/backend"
+      github: "https://github.com/irishprajapati/Peak-Times"
     }
   ];
 
   return (
     <section className="projects-section" id="projects">
-      <div className="container">
+      <div className="container projects-container">
         <h2 className="section-title">Projects</h2>
-        <div className="projects-list">
+        <div className="projects-masonry">
           {projects.map((project, index) => (
-            <div className="project-item" key={index}>
-              <div className="project-header">
+            <div className="project-card" key={index}>
+              <div className="project-card-header">
                 <h3>{project.title}</h3>
                 <div className="project-links">
                   {project.github && (
@@ -75,7 +75,7 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-              <p className="project-description">{project.desc}</p>
+              <p className="project-card-description">{project.desc}</p>
             </div>
           ))}
         </div>
