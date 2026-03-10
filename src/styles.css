@@ -177,6 +177,31 @@ body {
   height: 20px;
 }
 
+/* Visually hidden skip link shown on focus */
+.skip-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.skip-link:focus {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0.25rem);
+}
+
 /* Modern Header */
 .header {
   padding: 120px 0 60px;
@@ -286,6 +311,56 @@ body {
   transition: color 0.3s ease;
 }
 
+.header-subtitle {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.header-cta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: #0b1120;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
+}
+
+.primary-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
 .header-description {
   width: 100%;
   margin-top: 1.5rem;
@@ -315,6 +390,55 @@ section {
   padding-right: 1.5rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+.about-section {
+  position: relative;
+}
+
+.about-lead {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  max-width: 40rem;
+}
+
+.about-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem 1.75rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.about-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-card ul {
+  list-style: disc;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.about-card li + li {
+  margin-top: 0.35rem;
 }
 
 /* Projects section can be wider */
@@ -422,6 +546,12 @@ section {
 /* Modern Skills Section */
 .skills-section {
   padding: 50px 0;
+}
+
+.skills-intro {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 36rem;
 }
 
 .skills-grid {
@@ -570,6 +700,24 @@ section {
   flex: 1;
 }
 
+.project-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.75rem;
+}
+
+.project-highlights {
+  margin-top: 0.75rem;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  list-style: disc;
+}
+
+.project-highlights li + li {
+  margin-top: 0.3rem;
+}
+
 .projects-footer {
   margin-top: 2rem;
   text-align: left;
@@ -621,12 +769,12 @@ section {
   margin-bottom: 2rem;
 }
 
-.email {
+.email-link,
+.email-copy-button {
   font-size: 1.1rem;
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0.75rem 1.5rem;
   background: rgba(59, 130, 246, 0.1);
@@ -635,11 +783,19 @@ section {
   display: inline-block;
 }
 
-.email:hover {
+.email-link:hover,
+.email-copy-button:hover {
   background: rgba(59, 130, 246, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   border-color: var(--accent);
+}
+
+.email-copy-button {
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
 }
 
 .email-copied {
