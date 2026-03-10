@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 import Header from './components/Header';
 import About from './components/About';
 import Experience from './components/Experience';
