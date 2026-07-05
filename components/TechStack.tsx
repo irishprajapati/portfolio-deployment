@@ -21,29 +21,29 @@ export function TechStack() {
   return (
     <section
       id="stack"
-      className="scroll-mt-24 border-t border-zinc-200/70 px-4 py-16 sm:px-6 sm:py-20 dark:border-white/[0.06]"
+      className="scroll-mt-24 border-t border-white/10 px-6 py-16 sm:px-10 sm:py-24 lg:px-16"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-content">
         <FadeIn>
-          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">
+          <p className="font-inter text-xs uppercase tracking-widest text-white/50">
+            Knowledge
+          </p>
+          <h2 className="mt-2 font-podium text-3xl uppercase tracking-tight text-white sm:text-4xl">
             Tech stack
           </h2>
-          <p className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-            A focused stack
-          </p>
         </FadeIn>
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-3">
           {groups.map((g) => (
             <StaggerItem key={g.title}>
-              <div className="rounded-2xl border border-zinc-200/80 bg-white/70 p-6 shadow-sm dark:border-white/[0.06] dark:bg-surface-card/40 dark:shadow-card">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <div className="border border-white/10 bg-white/5 p-6">
+                <h3 className="font-inter text-xs font-semibold uppercase tracking-wider text-white/50">
                   {g.title}
                 </h3>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {g.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-700 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-300"
+                      className="border border-white/15 px-3 py-1 font-inter text-xs font-medium text-white/80"
                     >
                       {item}
                     </li>

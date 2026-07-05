@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { SITE } from '@/lib/content';
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-sans',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -16,15 +17,15 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Irish Prajapati | Backend Developer',
+  title: `${SITE.name} | ${SITE.role}`,
   description:
     'Backend developer building predictable production systems. Clear APIs, reliable data models, measurable performance.',
   openGraph: {
-    title: 'Irish Prajapati | Backend Developer',
+    title: `${SITE.name} | ${SITE.role}`,
     description:
       'Python, FastAPI, PostgreSQL. Clear APIs and reliable data models.',
-    url: 'https://prajapatiirish.com.np',
-    siteName: 'Irish Prajapati',
+    url: SITE.url,
+    siteName: SITE.name,
     type: 'website',
   },
 };
@@ -35,17 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${jetbrains.variable} font-sans min-h-screen`}
-      >
-        <ThemeProvider>
-          <div className="fixed inset-0 -z-10 bg-white dark:bg-surface">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(59,130,246,0.12),transparent)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_100%_0%,rgba(139,92,246,0.06),transparent)]" />
-          </div>
-          {children}
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${inter.variable} ${jetbrains.variable} min-h-screen`}>
+        {children}
       </body>
     </html>
   );

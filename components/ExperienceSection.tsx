@@ -13,32 +13,32 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="scroll-mt-24 border-t border-zinc-200/70 px-4 py-16 sm:px-6 sm:py-20 dark:border-white/[0.06]"
+      className="scroll-mt-24 border-t border-white/10 px-6 py-16 sm:px-10 sm:py-24 lg:px-16"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-content">
         <FadeIn>
-          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">
+          <p className="font-inter text-xs uppercase tracking-widest text-white/50">
             Experience
-          </h2>
-          <div className="mt-8 rounded-2xl border border-zinc-200/80 bg-white/70 p-6 shadow-sm sm:p-8 dark:border-white/[0.06] dark:bg-surface-card/50 dark:shadow-card">
+          </p>
+          <div className="mt-8 border border-white/10 bg-white/5 p-6 sm:p-8">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+                <h3 className="font-inter text-lg font-semibold text-white">
                   Backend Developer Intern
                 </h3>
-                <p className="mt-1 text-zinc-600 dark:text-zinc-400">
+                <p className="mt-1 font-inter text-white/60">
                   Smart Saauzi Solutions Pvt. Ltd.
                 </p>
               </div>
-              <p className="mt-2 font-mono text-sm text-zinc-500 sm:mt-0">
+              <p className="mt-2 font-mono text-sm text-white/40 sm:mt-0">
                 Aug 2025 – Nov 2025
               </p>
             </div>
-            <ul className="mt-6 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-400">
+            <ul className="mt-6 space-y-2.5 font-inter text-sm text-white/65">
               {bullets.map((b) => (
                 <li key={b} className="flex gap-2">
                   <span
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40"
                     aria-hidden
                   />
                   {b}

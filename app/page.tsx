@@ -1,4 +1,3 @@
-import { SiteNav } from '@/components/SiteNav';
 import { Hero } from '@/components/Hero';
 import { Projects } from '@/components/Projects';
 import { Approach } from '@/components/Approach';
@@ -10,9 +9,8 @@ import { Footer } from '@/components/Footer';
 export default function Home() {
   return (
     <>
-      <SiteNav />
-      <main>
-        <Hero />
+      <Hero />
+      <main className="bg-black">
         <Projects />
         <Approach />
         <ExperienceSection />

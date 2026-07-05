@@ -81,16 +81,19 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="scroll-mt-24 px-4 py-16 sm:px-6 sm:py-20">
-      <div className="mx-auto max-w-5xl">
+    <section
+      id="projects"
+      className="scroll-mt-24 border-t border-white/10 px-6 py-16 sm:px-10 sm:py-24 lg:px-16"
+    >
+      <div className="mx-auto max-w-content">
         <FadeIn>
-          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">
+          <p className="font-inter text-xs uppercase tracking-widest text-white/50">
             Projects
-          </h2>
-          <p className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-            Backend projects
           </p>
-          <p className="mt-3 max-w-2xl text-zinc-600 dark:text-zinc-400">
+          <h2 className="mt-2 font-podium text-3xl uppercase tracking-tight text-white sm:text-4xl">
+            Selected work
+          </h2>
+          <p className="mt-3 max-w-2xl font-inter text-sm text-white/60 sm:text-base">
             Clean APIs, solid data models, and performance you can measure.
           </p>
         </FadeIn>
@@ -100,10 +103,10 @@ export function Projects() {
               <motion.article
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="group h-full rounded-2xl border border-zinc-200/80 bg-white/70 p-6 shadow-sm transition duration-300 hover:shadow-md dark:border-white/[0.06] dark:bg-surface-card/60 dark:shadow-card dark:hover:shadow-card-hover"
+                className="group h-full border border-white/10 bg-white/5 p-6 transition duration-300 hover:border-white/25 hover:bg-white/[0.08]"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-white">
+                  <h3 className="font-inter text-lg font-semibold tracking-tight text-white">
                     {p.title}
                   </h3>
                   <div className="flex items-center gap-2">
@@ -112,7 +115,7 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${p.title} on GitHub`}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition hover:bg-zinc-50 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-300 dark:hover:border-white/[0.12] dark:hover:bg-white/[0.05]"
+                      className="inline-flex h-9 w-9 items-center justify-center border border-white/15 text-white transition hover:border-white hover:bg-white hover:text-black"
                     >
                       <GitHubIcon className="h-4 w-4" />
                     </a>
@@ -121,24 +124,24 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open live demo for ${p.title}`}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition hover:bg-zinc-50 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-zinc-300 dark:hover:border-white/[0.12] dark:hover:bg-white/[0.05]"
+                      className="inline-flex h-9 w-9 items-center justify-center border border-white/15 text-white transition hover:border-white hover:bg-white hover:text-black"
                     >
                       <ExternalLinkIcon className="h-4 w-4" />
                     </a>
                   </div>
                 </div>
-                <ul className="mt-4 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <ul className="mt-4 space-y-2 font-inter text-sm text-white/60">
                   {p.points.map((pt) => (
                     <li key={pt} className="flex gap-2">
                       <span
-                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600"
+                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-white/40"
                         aria-hidden
                       />
                       <span>{pt}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-5 border-t border-zinc-200/70 pt-4 font-mono text-xs text-zinc-500 dark:border-white/[0.06]">
+                <p className="mt-5 border-t border-white/10 pt-4 font-mono text-xs text-white/40">
                   {p.stack}
                 </p>
               </motion.article>
